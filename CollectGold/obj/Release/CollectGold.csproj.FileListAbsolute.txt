@@ -1,0 +1,17 @@
+C:\Users\Adam\Desktop\practice\CollectGold\CollectGold\bin\CollectGold.dll
+C:\Users\Adam\Desktop\practice\CollectGold\CollectGold\bin\CollectGold.pdb
+C:\Users\Adam\Desktop\practice\CollectGold\CollectGold\bin\Microsoft.AspNet.SignalR.Core.dll
+C:\Users\Adam\Desktop\practice\CollectGold\CollectGold\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+C:\Users\Adam\Desktop\practice\CollectGold\CollectGold\bin\Microsoft.Owin.dll
+C:\Users\Adam\Desktop\practice\CollectGold\CollectGold\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Adam\Desktop\practice\CollectGold\CollectGold\bin\Microsoft.Owin.Security.dll
+C:\Users\Adam\Desktop\practice\CollectGold\CollectGold\bin\Newtonsoft.Json.dll
+C:\Users\Adam\Desktop\practice\CollectGold\CollectGold\bin\Owin.dll
+C:\Users\Adam\Desktop\practice\CollectGold\CollectGold\bin\Microsoft.AspNet.SignalR.Core.xml
+C:\Users\Adam\Desktop\practice\CollectGold\CollectGold\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+C:\Users\Adam\Desktop\practice\CollectGold\CollectGold\bin\Microsoft.Owin.xml
+C:\Users\Adam\Desktop\practice\CollectGold\CollectGold\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Adam\Desktop\practice\CollectGold\CollectGold\bin\Microsoft.Owin.Security.xml
+C:\Users\Adam\Desktop\practice\CollectGold\CollectGold\bin\Newtonsoft.Json.xml
+C:\Users\Adam\Desktop\practice\CollectGold\CollectGold\obj\Release\CollectGold.dll
+C:\Users\Adam\Desktop\practice\CollectGold\CollectGold\obj\Release\CollectGold.pdb

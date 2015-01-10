@@ -1,0 +1,179 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title>CollectGold</title>
+        <style type="text/css">
+            body {
+                font-family:Arial;
+                background-color:#000;
+            }
+            #container {
+                margin:0px auto;
+                width:900px;
+                border:1px solid #2a3446;
+                height:auto;
+            }
+            #canvasScreen {
+                float:left;
+                background-color:#343434;
+                background-image:url('ClientTextures/menus/canvas_bg.png');
+            }
+            #chatScreen {
+                background-color: #000;
+                float:right;
+                width:300px;
+                height:500px;
+            }
+            #chatMessages {
+                margin:10px;
+                max-width:280px;
+                height:90%;
+                background-color:#000;
+                color:#fff;
+                font-size:12px;
+                border:1px solid #2a3446;
+                overflow-y:scroll;
+            }
+            #sendMsgField, #usernameField {
+                margin-left:10px;
+                border:1px solid #2a3446;
+                background-color:#000;
+                color:#fff;
+            }
+            #countDownManager {
+                clear:both;
+                width:100%;
+                height:30px;
+                background-color:#e8e8e8;
+                text-align:center;
+                color:#fff;
+                background-color:#000;
+            }
+            #bottom {
+                clear:both;
+                width:100%;
+                height:auto;
+                text-align:center;
+                font-size:10px;
+                color:#fff;
+            }
+            #welcomingScreen, #gameOverScreen {
+                left:-50%;
+                position:relative;
+                background-color:rgba(0,0,0,0.5);
+                color:#fff;
+                width:400px;
+                height:auto;
+            }
+            #welcomingTable, #gameOverTable {
+                position:relative;
+                width:100%;
+                border:1px solid #2a3446;
+            }
+            #welcomingTable td, #gameOverTable td {
+                text-align:center;
+                padding-top:20px;
+                padding-bottom:20px;
+                border:1px solid #2a3446;
+            }
+            #playBtn {
+                position:relative;
+                margin:0px auto;
+                width:70px;
+                height:auto;
+                text-align:center;
+                border:1px solid #2a3446;
+                background-color:#f1f8ff;
+                color:#000;
+                cursor:pointer;
+                text-align:center;
+                font-size:13px;
+                padding:5px;
+            }
+        </style>
+
+        <!-- Scripts -->
+        <script src="Scripts/jquery-1.8.2.min.js" ></script>
+        <script src="Scripts/jquery.signalR-2.0.3.min.js"></script>
+        <script src="Scripts/easeljs-0.7.1.min.js"></script>
+
+        <!-- Models -->
+        <script src="Scripts/Model/Environment.js"></script>
+        <script src="Scripts/Model/Player.js"></script>
+        <script src="Scripts/Model/Gold.js"></script>
+        <script src="Scripts/Model/AmountOfGold.js"></script>
+
+        <!-- Formulas -->
+        <script src="Scripts/GameLogic/Formulas/Formulas.js"></script>
+
+        <!-- Initial Info -->
+        <script src="Scripts/GameLogic/InitialInfo/Map.js"></script>
+        <script src="Scripts/GameLogic/InitialInfo/InitialInformation.js"></script>
+        <script src="Scripts/GameLogic/InitialInfo/DrawWorld.js"></script>
+        <script src="Scripts/GameLogic/InitialInfo/EnvirManipulation.js"></script>
+        <script src="Scripts/GameLogic/InitialInfo/StartGameMan.js"></script>
+        <script src="Scripts/GameLogic/InitialInfo/OnGameOver.js"></script>
+
+        <!-- Movement -->
+        <script src="Scripts/GameLogic/Movement/Movement.js"></script>
+
+        <!-- Handling -->
+        <script src="Scripts/GameLogic/Handling/PlayersHandling.js"></script>
+        <script src="Scripts/GameLogic/Handling/GoldHandling.js"></script>
+
+        <!-- Collisions -->
+        <script src="Scripts/GameLogic/Collisions/CollisionDetections.js"></script>
+
+        <!-- Chat -->
+        <script src="Scripts/ChatLogic/Methods.js"></script>
+        <script src="signalr/hubs"></script>
+    </head>
+    <body onLoad="init();">
+        <div id="container">
+            <canvas id="canvasScreen" width="600" height="500">
+        
+            </canvas>
+            <div id="chatScreen">
+                <div id="chatMessages"></div>
+                <input type="text" name="smf" id="sendMsgField" maxlength="50" size="43" />
+            </div>
+            <div id="countDownManager"></div>
+            <div id="bottom">
+                <i>Copyright &copy; Roman Pusec, 2014</i>
+            </div>
+        </div>
+        <div id="wsContainer" style="position: absolute; left: 50%; top:10%; visibility:hidden;">
+            <div id="welcomingScreen">
+                <table id="welcomingTable">
+                    <tr>
+                        <th>Welcome!</th>
+                    </tr>
+                    <tr>
+                        <td>Welcome to CollectGold! The one who collects the most gold wins!<br /> Please choose your name and hit play!</td>
+                    </tr>
+                    <tr>
+                        <td><p id="showLoginError"></p><br />Username: <input id="usernameField" type="text" name="usernameField" maxlength="10" value=""></td>
+                    </tr>
+                    <tr>
+                        <td><div id="playBtn" onclick="validateName();">Play!</div></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div id="gosContainer" style="position: absolute; left: 50%; top:10%; visibility:hidden;">
+            <div id="gameOverScreen">
+                <table id="gameOverTable">
+                    <tr>
+                        <th>Game Over!</th>
+                    </tr>
+                    <tr>
+                        <td>See the list of players below! </td>
+                    </tr>
+                    <tr>
+                        <td id="listOfPlayersGO"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>
